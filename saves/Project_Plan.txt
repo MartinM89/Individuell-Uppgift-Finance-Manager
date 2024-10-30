@@ -1,0 +1,25 @@
+My Finance App
+
+- Add Transactions
+    - Name = Transaction name e.g. Salary, Rent, Purchase
+    - Date = yyyy-MM-dd or dd-MM-yyyy
+    - Value = How much does balance change, positive value for income, negative value for expense
+- Show balance
+    - Show total balance
+    - Print List if user wants to see it
+- Delete Transactions
+    - Print list with index as ID
+    - Delete based on ID
+- Show Transactions
+    - Type Day
+    - Type Week
+    - Type Month
+    - Type Year
+- Save and Exit
+    - Saves automatically, as JSON file
+    - Exists the program
+- Load Transactions
+    - No button, loads automatically on program start
+- Show Help Page
+    - Show it once on first run
+    - Let user choose to see it again
