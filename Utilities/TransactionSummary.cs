@@ -1,32 +1,32 @@
 using System.Globalization;
 
-public class IncomeSummary
+public class TransactionSummary
 {
     static int transactionCount = TransactionManager.GetTransactionCount();
     static int loops = 0;
     static int userDateChoice;
 
-    public static void Day()
+    public static void Day(bool income)
     {
-        HandleIncomeTransactionSummary(TransactionType.Day, 1, 31);
+        HandleIncomeTransactionSummary(TransactionType.Day, 1, 31, income);
     }
 
-    public static void Week()
+    public static void Week(bool income)
     {
-        HandleIncomeTransactionSummary(TransactionType.Week, 1, 53);
+        HandleIncomeTransactionSummary(TransactionType.Week, 1, 53, income);
     }
 
-    public static void Month()
+    public static void Month(bool income)
     {
-        HandleIncomeTransactionSummary(TransactionType.Month, 1, 12);
+        HandleIncomeTransactionSummary(TransactionType.Month, 1, 12, income);
     }
 
-    public static void Year()
+    public static void Year(bool income)
     {
-        HandleIncomeTransactionSummary(TransactionType.Year, 1970, DateTime.Now.Year + 100);
+        HandleIncomeTransactionSummary(TransactionType.Year, 1970, DateTime.Now.Year + 100, income);
     }
 
-    public static void HandleIncomeTransactionSummary(TransactionType transactionType, int minValue, int maxValue)
+    public static void HandleIncomeTransactionSummary(TransactionType transactionType, int minValue, int maxValue, bool income)
     {
         while (true)
         {
@@ -71,7 +71,11 @@ public class IncomeSummary
                     transactionDatePart = calendar.GetWeekOfYear(transaction.Date, weekRule, firstDayOfWeek);
                 }
 
-                if (userDateChoice.Equals(transactionDatePart) && transaction.Amount > 0)
+                if (userDateChoice.Equals(transactionDatePart) && transaction.Amount > 0 && income)
+                {
+                    Console.WriteLine(transaction.ToString());
+                }
+                else if (userDateChoice.Equals(transactionDatePart) && transaction.Amount < 0 && !income)
                 {
                     Console.WriteLine(transaction.ToString());
                 }

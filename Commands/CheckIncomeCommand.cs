@@ -29,23 +29,25 @@ class CheckIncomeCommand
 
             if (byte.TryParse(userChoiceString, out byte userChoice))
             {
+                bool income = true;
+
                 Console.Clear();
 
                 if (userChoice.Equals(1))
                 {
-                    IncomeSummary.Day();
+                    TransactionSummary.Day(income);
                 }
                 else if (userChoice.Equals(2))
                 {
-                    IncomeSummary.Week();
+                    TransactionSummary.Week(income);
                 }
                 else if (userChoice.Equals(3))
                 {
-                    IncomeSummary.Month();
+                    TransactionSummary.Month(income);
                 }
                 else if (userChoice.Equals(4))
                 {
-                    IncomeSummary.Year();
+                    TransactionSummary.Year(income);
                 }
                 else
                 {

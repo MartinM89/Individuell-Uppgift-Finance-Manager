@@ -1,6 +1,5 @@
 class CheckExpenseCommand
 {
-    // private static ExpenseSummary expenseSummary = new ExpenseSummary();
     public static void Execute()
     {
         while (true)
@@ -29,23 +28,25 @@ class CheckExpenseCommand
 
             if (byte.TryParse(userChoiceString, out byte userChoice))
             {
+                bool income = false;
+
                 Console.Clear();
 
                 if (userChoice.Equals(1))
                 {
-                    ExpenseSummary.Day();
+                    TransactionSummary.Day(income);
                 }
                 else if (userChoice.Equals(2))
                 {
-                    ExpenseSummary.Week();
+                    TransactionSummary.Week(income);
                 }
                 else if (userChoice.Equals(3))
                 {
-                    ExpenseSummary.Month();
+                    TransactionSummary.Month(income);
                 }
                 else if (userChoice.Equals(4))
                 {
-                    ExpenseSummary.Year();
+                    TransactionSummary.Year(income);
                 }
                 else
                 {
