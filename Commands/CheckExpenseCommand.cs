@@ -1,6 +1,6 @@
 class CheckExpenseCommand
 {
-    private static ExpenseSummary expenseSummary = new ExpenseSummary();
+    // private static ExpenseSummary expenseSummary = new ExpenseSummary();
     public static void Execute()
     {
         while (true)
@@ -33,19 +33,19 @@ class CheckExpenseCommand
 
                 if (userChoice.Equals(1))
                 {
-                    expenseSummary.Day();
+                    ExpenseSummary.Day();
                 }
                 else if (userChoice.Equals(2))
                 {
-                    expenseSummary.Week();
+                    ExpenseSummary.Week();
                 }
                 else if (userChoice.Equals(3))
                 {
-                    expenseSummary.Month();
+                    ExpenseSummary.Month();
                 }
                 else if (userChoice.Equals(4))
                 {
-                    expenseSummary.Year();
+                    ExpenseSummary.Year();
                 }
                 else
                 {

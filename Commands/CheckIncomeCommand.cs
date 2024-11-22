@@ -1,6 +1,6 @@
 class CheckIncomeCommand
 {
-    private static IncomeSummary incomeSummary = new IncomeSummary();
+    // private static IncomeSummary incomeSummary = new IncomeSummary();
     public static void Execute()
     {
         while (true)
@@ -33,19 +33,19 @@ class CheckIncomeCommand
 
                 if (userChoice.Equals(1))
                 {
-                    incomeSummary.Day();
+                    IncomeSummary.Day();
                 }
                 else if (userChoice.Equals(2))
                 {
-                    incomeSummary.Week();
+                    IncomeSummary.Week();
                 }
                 else if (userChoice.Equals(3))
                 {
-                    incomeSummary.Month();
+                    IncomeSummary.Month();
                 }
                 else if (userChoice.Equals(4))
                 {
-                    incomeSummary.Year();
+                    IncomeSummary.Year();
                 }
                 else
                 {

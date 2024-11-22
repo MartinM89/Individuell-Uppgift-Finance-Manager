@@ -6,27 +6,27 @@ public class IncomeSummary
     static int loops = 0;
     static int userDateChoice;
 
-    public void Day()
+    public static void Day()
     {
         HandleIncomeTransactionSummary(TransactionType.Day, 1, 31);
     }
 
-    public void Week()
+    public static void Week()
     {
         HandleIncomeTransactionSummary(TransactionType.Week, 1, 53);
     }
 
-    public void Month()
+    public static void Month()
     {
         HandleIncomeTransactionSummary(TransactionType.Month, 1, 12);
     }
 
-    public void Year()
+    public static void Year()
     {
         HandleIncomeTransactionSummary(TransactionType.Year, 1970, DateTime.Now.Year + 100);
     }
 
-    public void HandleIncomeTransactionSummary(TransactionType transactionType, int minValue, int maxValue)
+    public static void HandleIncomeTransactionSummary(TransactionType transactionType, int minValue, int maxValue)
     {
         while (true)
         {
